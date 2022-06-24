@@ -1,0 +1,5 @@
+www.google.com$ 3600
+www.baidu.com$ 3600
+m.baidu.com$ 3600
+cn.bing.com$ 3600
+mp.weixin.qq.com$ 3600

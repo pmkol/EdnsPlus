@@ -1,0 +1,10 @@
+[Unit]
+Description=EdnsPlusOvernure
+After=network.target
+
+[Service]
+ExecStart=/usr/local/ednsplus/bin/overture -c /usr/local/ednsplus/config.yml
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

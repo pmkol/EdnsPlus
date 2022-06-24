@@ -1,0 +1,10 @@
+[Unit]
+Description=EdnsPlusDnsProxy
+After=network.target
+
+[Service]
+ExecStart=/usr/local/ednsplus/bin/dnsproxy --config-path=/usr/local/ednsplus/dnsproxy.yml
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

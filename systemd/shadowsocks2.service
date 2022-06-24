@@ -1,0 +1,11 @@
+[Unit]
+Description=EdnsPlusShadowsocks2Client
+After=network.target
+
+[Service]
+EnvironmentFile=/usr/local/ednsplus/shadowsocks2.env
+ExecStart=/usr/local/ednsplus/bin/shadowsocks2 -c $REMOTE_ADDR -socks :1053 -tcptun :9253=94.140.15.15:53
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target

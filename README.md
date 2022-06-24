@@ -1,6 +1,6 @@
 # EdnsPlus ReadMe
 
-智能DNS服务部署脚本，通过EDNS协议以获取更精准的查询结果，由Apad.Pro创建
+智能DNS服务部署脚本，通过EDNS协议以获取更精准的查询结果，由Apad.Pro创建<br />
 CentOS/Redhat已通过测试，其它Linux系统可以参考源码修改后部署
 
 ## 产品介绍
@@ -169,4 +169,4 @@ cd /usr/local/ednsplus/tools
 ## Installation
 
 For feedback, questions, and to follow the progress of the project: <br />
-[Telegram](https://t.me/maplecool)<br />
+[Telegram Group](https://t.me/+VeV5wt1E6FA5Ue-x)<br />

@@ -18,6 +18,7 @@ EdnsPlus使用Overture+Dnsproxy+Socks2dns方案，配合脚本处理域名分流
 
 更多信息请查看 https://apad.pro/ednsplus/
 <br />
+<br />
 ## 部署服务
 
 请务必将EdnsPlus部署在/usr/local/ednsplus目录，以免脚本无法使用
@@ -47,6 +48,7 @@ cd /usr/local/ednsplus/tools
 ```
 
 部署完成后，请开启防火墙的UDP53、TCP53、TCP80、TCP443端口，部分有硬件防火墙服务的云主机应在管理页面同时开启以上端口
+<br />
 <br />
 ## 如何开启Socks5代理查询模式
 

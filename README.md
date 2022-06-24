@@ -3,6 +3,7 @@
 智能DNS服务部署脚本，通过EDNS协议以获取更精准的查询结果，由Apad.Pro创建<br />
 CentOS/Redhat已通过测试，其它x86_64的Linux系统可以参考源码修改后部署
 
+
 ## 产品介绍
 
 EdnsPlus使用Overture+Dnsproxy+Socks2dns方案，配合脚本处理域名分流规则，可以更精准的解析域名，查询也更高效。支持UDP、TCP、DoH、DoT、DoQ方案，支持EDNS修改，支持Redis缓存，支持自定义规则解析，优化域名解析结果，拦截恶意域名，纯净无污染。

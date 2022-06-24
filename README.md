@@ -68,6 +68,7 @@ cd /usr/local/ednsplus/tools
 ./update_local
 ```
 <br />
+<br />
 ## 如何开启规则自动更新
 
 使用crontab -e命令在最后一行添加对应规则即可
@@ -81,6 +82,7 @@ cd /usr/local/ednsplus/tools
 ```bash
 0 5 * * * /usr/local/ednsplus/tools/update_socks5
 ```
+<br />
 <br />
 ## 如何自定义EDNS查询
 
@@ -104,6 +106,7 @@ cd /usr/local/ednsplus/tools
 ./restart_dns
 ```
 <br />
+<br />
 ## 如何自定义hosts
 
 请添加规则至根目录下的hosts列表后重启服务
@@ -112,6 +115,7 @@ cd /usr/local/ednsplus/tools
 ./restart_dns
 ```
 <br />
+<br />
 ## 如何开启Redis缓存
 
 请先确认Redis服务在本机的6379端口正常运行，修改根目录下的config.yml配置文件，删除#cacheRedisUrl前的#号注释，重启DNS服务
@@ -119,6 +123,7 @@ cd /usr/local/ednsplus/tools
 cd /usr/local/ednsplus/tools
 ./restart_dns
 ```
+<br />
 <br />
 ## 如何开启DoH
 
@@ -139,6 +144,7 @@ nginx反代示例：
   }
 ```
 <br />
+<br />
 ## 如何开启与使用DoT/DoQ/8053端口
 
 - 开启Dot/DoQ<br />
@@ -157,17 +163,20 @@ cd /usr/local/ednsplus/tools
 #### 如何使用DoT/DoQ/8053端口
 只建议做被污染域名的上游DNS使用，hosts规则会失效
 <br />
+<br />
 ## 如何卸载服务
 ```bash
 cd /usr/local/ednsplus/tools
 ./remove_service
 ```
 <br />
+<br />
 ## 源码鸣谢
 [Overture](https://github.com/shawn1m/overture/releases/tag/v1.8)<br />
 [Dnsproxy](https://github.com/AdguardTeam/dnsproxy/releases/tag/v0.43.1)<br />
 [Dns2socks](https://github.com/rampageX/dns2socks)<br />
 [Go-shadowsocks2](https://github.com/shadowsocks/go-shadowsocks2/releases/tag/v0.1.5)<br />
+<br />
 <br />
 ## Installation
 

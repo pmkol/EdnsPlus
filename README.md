@@ -9,7 +9,7 @@ EdnsPlus使用Overture+Dnsproxy+Socks2dns方案，配合脚本处理域名分流
 
 相比早期基于Chinadns根据中国大陆IP列表分流的方案，使用Overture前端根据IP分流后，会将原本使用境外DNS解析的域名优化为使用Dnsproxy智能分流：
 
-- 默认使用OpenDNS查询
+- 默认使用GoogleDNS查询
 - 域名存在境内CDN则使用境内DNS查询
 - 恶意域名向AdGuardDNS查询实现屏蔽
 - 自定义需要使用境外客户端IP解析的域名，模拟中国台湾用户的IP进行解析

@@ -1,0 +1,7 @@
+#!/bin/bash
+# Powered by Apad.pro
+# https://apad.pro/ednsplus
+#
+# Notes: EDNS-Plus for CentOS/RedHat 7+
+#
+sudo systemctl restart dnsproxy && sudo systemctl restart overture && sudo systemctl status dnsproxy && sudo systemctl status overture

@@ -1,0 +1,7 @@
+#!/bin/bash
+# Powered by Apad.pro
+# https://apad.pro/ednsplus
+#
+# Notes: EDNS-Plus for CentOS/RedHat 7+
+#
+curl https://fastly.jsdelivr.net/gh/pexcn/daily@gh-pages/chinalist/chinalist.txt > /tmp/temp_chinalist.txt && curl https://fastly.jsdelivr.net/gh/bigdargon/hostsVN@master/source/hosts.txt | sed '/^#/d; s/0.0.0.0 //' > /tmp/temp_hosts.txt && cat /usr/local/ednsplus/ecs_cn_domain /tmp/temp_chinalist.txt | sort -u > /tmp/temp_chinalist_domain.txt && cat /usr/local/ednsplus/ecs_tw_domain /tmp/temp_chinalist_domain.txt | sort | uniq -d > /tmp/temp_chinalist_ecstw.txt && cat /tmp/temp_chinalist_domain.txt /tmp/temp_chinalist_ecstw.txt | sort | uniq -u | sed 's!^![/!g; s!$!/]tls://223.6.6.6!g' > /usr/local/ednsplus/rules/ecscn_domain_list.txt && cat /tmp/temp_hosts.txt /tmp/temp_chinalist_domain.txt | sort | uniq -d > /tmp/temp_chinalist_hosts.txt && cat /tmp/temp_hosts.txt /tmp/temp_chinalist_hosts.txt | sort | uniq -u > /tmp/temp_adguard.txt && cat /tmp/temp_adguard.txt /tmp/temp_ecs_domain.txt | sort | uniq -d > /tmp/temp_ecs_hosts.txt && cat /tmp/temp_hosts.txt /tmp/temp_ecs_hosts.txt | sort | uniq -u | sed 's!^![/!g; s!$!/]94.140.15.15:53!g' > /usr/local/ednsplus/rules/adguard_domain_list.txt && cat /usr/local/ednsplus/ecs_tw_domain | sed 's!^![/!g; s!$!/]168.95.1.1:53!g' > /usr/local/ednsplus/rules/ecstw_domain_list.txt && sudo systemctl stop dns2sockscn && sudo systemctl disable dns2sockscn && sudo systemctl restart dnsproxy && sudo systemctl status dnsproxy

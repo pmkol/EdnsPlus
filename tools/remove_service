@@ -1,0 +1,7 @@
+#!/bin/bash
+# Powered by Apad.pro
+# https://apad.pro/ednsplus
+#
+# Notes: EDNS-Plus for CentOS/RedHat 7+
+#
+sudo systemctl stop shadowsocks2 && sudo systemctl stop dns2sockscn && sudo systemctl stop dns2sockstw && sudo systemctl stop dnsproxy && sudo systemctl stop overture && sudo systemctl disable shadowsocks2 && sudo systemctl disable dns2sockscn && sudo systemctl disable dns2sockstw && sudo systemctl disable dnsproxy && sudo systemctl disable overture && rm -rf /etc/systemd/system/dns2sockscn.service /etc/systemd/system/dns2sockstw.service /etc/systemd/system/dnsproxy.service /etc/systemd/system/overture.service /etc/systemd/system/shadowsocks2.service && echo "EDNS+ Services has been removed T.T"

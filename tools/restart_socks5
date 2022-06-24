@@ -1,0 +1,7 @@
+#!/bin/bash
+# Powered by Apad.pro
+# https://apad.pro/ednsplus
+#
+# Notes: EDNS-Plus for CentOS/RedHat 7+
+#
+sudo systemctl restart shadowsocks2 && sudo systemctl restart dns2sockscn && sudo systemctl restart dns2sockstw && sudo systemctl status shadowsocks2 && sudo systemctl status dns2sockscn && sudo systemctl status dns2sockstw

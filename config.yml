@@ -1,0 +1,44 @@
+bindAddress: :53
+debugHTTPAddress: 127.0.0.1:5353
+dohEnabled: true
+primaryDNS:
+  - name: alidns
+    address: 223.5.5.5:53
+    protocol: udp
+    socks5Address:
+    timeout: 1
+    ednsClientSubnet:
+      policy: auto
+      externalIP:
+      noCookie: false
+alternativeDNS:
+  - name: dnsproxy
+    address: 127.0.0.1:8053
+    protocol: udp
+    socks5Address:
+    timeout: 2
+    ednsClientSubnet:
+      policy: auto
+      externalIP:
+      noCookie: true
+onlyPrimaryDNS: false
+ipv6UseAlternativeDNS: false
+alternativeDNSConcurrent: false
+whenPrimaryDNSAnswerNoneUse: primaryDNS
+ipNetworkFile:
+  primary: /usr/local/ednsplus/rules/china_ip_list.txt
+  alternative: /usr/local/ednsplus/rules/ip_network_alternative.txt
+domainFile:
+  primary: /usr/local/ednsplus/ecs_cn_domain
+  alternative: /usr/local/ednsplus/ecs_tw_domain
+  matcher: full-map
+hostsFile:
+  hostsFile: /usr/local/ednsplus/hosts
+  finder: full-map
+minimumTTL: 60
+domainTTLFile: /usr/local/ednsplus/rules/domain_ttl.txt
+cacheSize: 51200
+#cacheRedisUrl: redis://127.0.0.1:6379/0
+cacheRedisConnectionPoolSize: 8192
+rejectQType:
+  - 255

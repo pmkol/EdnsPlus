@@ -1,0 +1,36 @@
+# This is the yaml configuration file for dnsproxy with minimal working
+# configuration, all the options available can be seen with ./dnsproxy --help.
+# To use it within dnsproxy specify the --config-path=/<path-to-config.yaml>
+# option.  Any other command-line options specified will override the values
+# from the config file.
+---
+listen-addrs: 
+  - "0.0.0.0"
+listen-ports: 
+  - 8053
+max-go-routines: 0
+ratelimit: 0
+udp-buf-size: 0
+bootstrap: 
+  - "208.67.220.220:443"
+  - "101.6.6.6:5353"
+upstream: 
+  - "tls://8.8.4.4"
+# - "208.67.220.220:5353"
+  - "127.0.0.1:9053"
+  - "/usr/local/ednsplus/rules/ecscn_domain_list.txt"
+  - "/usr/local/ednsplus/rules/ecstw_domain_list.txt"
+  - "/usr/local/ednsplus/rules/adguard_domain_list.txt"
+fallback:
+  - "tls://120.53.53.53"
+  - "tls://1.12.12.12"
+fastest-addr: true
+edns: true
+cache: true
+cache-size: 512
+cache-max-ttl: 600
+cache-min-ttl: 120
+# tls-port: 853
+# quic-port: 853
+# tls-crt: ./yourdomain.crt
+# tls-key: ./yourdomain.key

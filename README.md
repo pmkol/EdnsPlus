@@ -138,17 +138,17 @@ nginx反代示例：
 
 ## 如何开启与使用DoT/DoQ/8053端口
 
-- 开启Dot/DoQ
+- 开启Dot/DoQ<br />
 修改根目录下的dnsproxy.yml配置文件，取消#tls-port、#quic-port、#tls-crt、#tls-key前的注释，指定SSL证书位置，重启DNS服务即可
 ```bash
 cd /usr/local/ednsplus/tools
 ./restart_dns
 ```
 
-- 开启8053端口
+- 开启8053端口<br />
 8053端口默认开启
 
-- 开启防火墙端口
+- 开启防火墙端口<br />
 请开启防火墙的UDP853、TCP853、UDP8053、TCP8053端口，部分有硬件防火墙服务的云主机应在管理页面同时开启以上端口
 
 #### 如何使用DoT/DoQ/8053端口

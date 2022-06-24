@@ -2,8 +2,7 @@
 
 智能DNS服务部署脚本，通过EDNS协议以获取更精准的查询结果，由Apad.Pro创建<br />
 CentOS/Redhat已通过测试，其它x86_64的Linux系统可以参考源码修改后部署
-
-
+<br />
 ## 产品介绍
 
 EdnsPlus使用Overture+Dnsproxy+Socks2dns方案，配合脚本处理域名分流规则，可以更精准的解析域名，查询也更高效。支持UDP、TCP、DoH、DoT、DoQ方案，支持EDNS修改，支持Redis缓存，支持自定义规则解析，优化域名解析结果，拦截恶意域名，纯净无污染。
@@ -17,7 +16,7 @@ EdnsPlus使用Overture+Dnsproxy+Socks2dns方案，配合脚本处理域名分流
 - 当境外DNS查询结果为空时使用境内DNS再次查询，解决禁止境外解析且服务器未在境内的域名无法解析的问题
 
 更多信息请查看 https://apad.pro/ednsplus/
-
+<br />
 ## 部署服务
 
 请务必将EdnsPlus部署在/usr/local/ednsplus目录，以免脚本无法使用
@@ -47,7 +46,7 @@ cd /usr/local/ednsplus/tools
 ```
 
 部署完成后，请开启防火墙的UDP53、TCP53、TCP80、TCP443端口，部分有硬件防火墙服务的云主机应在管理页面同时开启以上端口
-
+<br />
 ## 如何开启Socks5代理查询模式
 
 Socks5默认为未配置状态，在ecs_tw_domain添加域名可能会存在污染，强烈推荐开启sokcs5代理查询模式实现无污染查询，配置shadowsocks客户端后重启服务立即生效，请修改根目录下的shadowsocks2.env配置文件，依次填写远程shadowsocks服务端的加密方式、密码、IP、端口信息，正确填写后执行以下操作开启Socks5查询模式
@@ -56,7 +55,7 @@ cd /usr/local/ednsplus/tools
 ./restart_socks5
 ./update_socks5
 ```
-
+<br />
 ## 如何关闭Socks5代理查询模式
 
 使用本地查询更新规则更新即可
@@ -64,8 +63,7 @@ cd /usr/local/ednsplus/tools
 cd /usr/local/ednsplus/tools
 ./update_local
 ```
-
-
+<br />
 ## 如何开启规则自动更新
 
 使用crontab -e命令在最后一行添加对应规则即可
@@ -79,7 +77,7 @@ cd /usr/local/ednsplus/tools
 ```bash
 0 5 * * * /usr/local/ednsplus/tools/update_socks5
 ```
-
+<br />
 ## 如何自定义EDNS查询
 
 部分域名可以通过自定义EDNS的方式加速，例如将github.com添加至ecs_tw_domain列表后，解析结果将会由原来的新加坡节点变为日本节点，大幅度提升访问速度
@@ -101,7 +99,7 @@ cd /usr/local/ednsplus/tools
 ./update_socks5
 ./restart_dns
 ```
-
+<br />
 ## 如何自定义hosts
 
 请添加规则至根目录下的hosts列表后重启服务
@@ -109,7 +107,7 @@ cd /usr/local/ednsplus/tools
 cd /usr/local/ednsplus/tools
 ./restart_dns
 ```
-
+<br />
 ## 如何开启Redis缓存
 
 请先确认Redis服务在本机的6379端口正常运行，修改根目录下的config.yml配置文件，删除#cacheRedisUrl前的#号注释，重启DNS服务
@@ -117,7 +115,7 @@ cd /usr/local/ednsplus/tools
 cd /usr/local/ednsplus/tools
 ./restart_dns
 ```
-
+<br />
 ## 如何开启DoH
 
 DoH服务默认已开启，访问地址：
@@ -136,7 +134,7 @@ nginx反代示例：
     }
   }
 ```
-
+<br />
 ## 如何开启与使用DoT/DoQ/8053端口
 
 - 开启Dot/DoQ<br />
@@ -154,19 +152,19 @@ cd /usr/local/ednsplus/tools
 
 #### 如何使用DoT/DoQ/8053端口
 只建议做被污染域名的上游DNS使用，hosts规则会失效
-
+<br />
 ## 如何卸载服务
 ```bash
 cd /usr/local/ednsplus/tools
 ./remove_service
 ```
-
+<br />
 ## 源码鸣谢
 [Overture](https://github.com/shawn1m/overture/releases/tag/v1.8)<br />
 [Dnsproxy](https://github.com/AdguardTeam/dnsproxy/releases/tag/v0.43.1)<br />
 [Dns2socks](https://github.com/rampageX/dns2socks)<br />
 [Go-shadowsocks2](https://github.com/shadowsocks/go-shadowsocks2/releases/tag/v0.1.5)<br />
-
+<br />
 ## Installation
 
 For feedback, questions, and to follow the progress of the project: <br />
